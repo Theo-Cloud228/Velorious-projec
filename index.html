@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velorious Sanctum</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0b1a33;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px 20px 20px;
+      background-color: #102544;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      margin: 0;
+      line-height: 1.4;
+      animation: colorChange 5s infinite;
+    }
+
+    @keyframes colorChange {
+      0%   { color: #ff5555; }
+      25%  { color: #55ff55; }
+      50%  { color: #5555ff; }
+      75%  { color: #ffff55; }
+      100% { color: #ff55ff; }
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .menu-button {
+      background-color: #195288;
+      color: #fff;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    .menu-button:hover {
+      background-color: #1e6bb8;
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .dropdown.active .dropdown-content {
+      display: flex;
+    }
+
+    .dropdown-content a {
+      background-color: #6ccf88;
+      color: #fff;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #5abd77;
+    }
+
+    .coming-soon {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #0a172d;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('active');
+    }
+
+    function openWhatsApp(name, number) {
+      const message = encodeURIComponent(`Halo! ${name} Saya ingin membeli Rank!`);
+      window.open(`https://wa.me/${number}?text=${message}`, '_blank');
+    }
+
+    function openGroupWithText() {
+      const message = encodeURIComponent("Halo! Saya member baru disini");
+      window.open(`https://chat.whatsapp.com/GJho9LVEzKzCSi2GKGWLan`, '_blank');
+      setTimeout(() => {
+        alert("Setelah bergabung, kirim pesan: 'Halo! Saya member baru disini'");
+      }, 1000);
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome To Velorious Sanctum Website!</h1>
+  </header>
+
+  <nav>
+    <div class="dropdown">
+      <div class="menu-button" onclick="toggleDropdown()">Rank</div>
+      <div class="dropdown-content">
+        <a href="javascript:void(0);" onclick="openWhatsApp('ValvaTore','6281385534542')">ValvaTore</a>
+        <a href="javascript:void(0);" onclick="openWhatsApp('Theofiee26','6205788092627')">Theofiee26</a>
+        <a href="javascript:void(0);" onclick="openWhatsApp('MilloLyns','6289532408070')">MilloLyns</a>
+      </div>
+    </div>
+
+    <a class="menu-button" href="javascript:void(0);" onclick="openGroupWithText()">WhatsApp</a>
+    <div class="menu-button coming-soon">Discord (Coming Soon)</div>
+    <div class="menu-button coming-soon">Vote Server (Coming Soon)</div>
+    <a class="menu-button" href="#fitur-rank">Fitur Rank</a>
+  </nav>
+
+  <main>
+    <h2>Selamat datang di Velorious Shop</h2>
+    <p>Gabung komunitas kami, akses ranking pemain, dan hubungi admin kami dengan mudah!</p>
+
+    <section id="fitur-rank">
+      <h3>Fitur Rank</h3>
+      <p>Untuk rank saat ini masih belum tersedia di server jadi mohon maaf untuk ketidaknyamanan member.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Velorious Shop. Semua hak dilindungi.
+  </footer>
+
+</body>
+</html>
